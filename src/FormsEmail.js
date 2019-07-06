@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
+import lock from "./lock.svg";
 import "./App.css";
 import Datajson from "./data.json";
 import { Table } from "react-bootstrap";
@@ -47,13 +48,18 @@ class FormsEmail extends Component {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div>
-          <h1 className='App-tittle'>Search Any Email Address.</h1>
+          <h1 align= 'center' className='App-tittle' >Search Any Email Address.</h1>
           <p className='App-subtittle'>
             Start Here - Look up the owner's name, address, age, notes, phone
             numbers and relatives. See what you find!
           </p>
         </div>
-      </header>
+        <div className= 'App-down'>
+        <img src={lock} className="App-secondLogo" alt="lock" />
+        <p className= 'App-subsubtittle'>
+          Enter any email adress. They wont be notified.
+        </p>
+        </div>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
@@ -64,6 +70,13 @@ class FormsEmail extends Component {
           />
           <button className="App-button">GO!</button>
         </form>
+      </header>
+
+        <div className="App-details">
+          <h1 className="App-center">Reverse Email Lookup</h1>
+          <p className="App-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
       </div>
     );
   }
