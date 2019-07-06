@@ -15,8 +15,11 @@ class FormsEmail extends Component {
   handleSubmit = event => {
     event.preventDefault();
     // se le agrego el toLowercase para que en caso que el usuario ponga nick en vez de Nick el find funcione
-    this.state.finalData=elementos.data;
-    if(this.state.email==null){
+    this.setState({
+      finalData:
+        elementos.data
+    });
+    if(this.state.email==null || this.state.email==''){
        alert("Email can not be null");
     }else{
       const resultArray = this.state.finalData.filter(item =>
@@ -30,8 +33,14 @@ class FormsEmail extends Component {
       });
       if (resultArray== ''){
         alert("Email not found.. Try again");
+        this.setState({
+          email:
+            null
+        });
+        console.log(this.state.email);
       }else {
         alert("Email found.. Its your lucky day");
+          console.log(this.state.email);
       }
     }
   };
@@ -71,7 +80,6 @@ class FormsEmail extends Component {
           <button className="App-button">GO!</button>
         </form>
       </header>
-
         <div className="App-details">
           <h1 className="App-center">Reverse Email Lookup</h1>
           <p className="App-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
