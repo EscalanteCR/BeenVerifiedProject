@@ -8,15 +8,15 @@ const elementos = Datajson;
 class FormsEmail extends Component {
 
   state = {
-    finalData: elementos.data
+    finalData:[]
   };
 
   handleSubmit = event => {
     event.preventDefault();
     // se le agrego el toLowercase para que en caso que el usuario ponga nick en vez de Nick el find funcione
-
+    this.state.finalData=elementos.data;
     if(this.state.email==null){
-       alert("Email not found.. Try again");
+       alert("Email can not be null");
     }else{
       const resultArray = this.state.finalData.filter(item =>
         item.email.toLowerCase().includes(this.state.email.toLowerCase())
@@ -27,29 +27,19 @@ class FormsEmail extends Component {
         finalData:
           !!this.state.email && resultArray ? resultArray : elementos.data
       });
+      if (resultArray== ''){
+        alert("Email not found.. Try again");
+      }else {
+        alert("Email found.. Its your lucky day");
+      }
     }
   };
-
   handleInputChange = event => {
-    this.state.finalData=elementos.data;
     event.preventDefault();
     this.setState({
       [event.target.name]: event.target.value
     });
   };
-
-  renderPerson(person, index) {
-    return (
-      <tr key={index}>
-        <td />
-        <td>{person.name}</td>
-        <td>{person.address}</td>
-        <td>{person.email}</td>
-        <td>{person.age}</td>
-        <td>{person.notes}</td>
-      </tr>
-    );
-  }
 
   render() {
     return (
@@ -73,22 +63,6 @@ class FormsEmail extends Component {
             onChange={this.handleInputChange}
           />
           <button className="App-button">GO!</button>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">Name</th>
-                <th scope="col">Address</th>
-                <th scope="col">Email</th>
-                <th scope="col">Age</th>
-                <th scope="col">Notes</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.finalData.map(this.renderPerson)}
-            </tbody>
-          </table>
         </form>
       </div>
     );
