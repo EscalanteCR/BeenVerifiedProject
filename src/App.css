@@ -1,0 +1,98 @@
+.App {
+
+}
+
+.App-logo {
+  width:150px;
+  height:150px;
+  pointer-events: none;
+  position: relative ;
+  top: -100px; left: -325px;
+  color: #FFFFFF;
+}
+.pt-3-half {
+padding-top: 1.4rem;
+}
+
+.App-tittle {
+  position: relative;
+  top: -95px; left: 0px;
+  font-size: calc(150%);
+  line-height: 1;
+  text-align: center;
+  width:980px;
+  height:62px;
+  color: #FFFFFF;
+
+}
+.App-subtittle {
+  position: relative;
+  top: -95px; left: 0px;
+  font-size: calc(20px);
+  line-height: 1;
+  text-align: center;
+  width:980px;
+  height:62px;
+  color: #FFFFFF;
+
+}
+.App-info {
+  position: relative;
+  top: -10px; left: 0px;
+  font-size: calc(20px);
+  line-height: 1;
+  text-align: center;
+  width:980px;
+  height:62px;
+  color: #000000;
+
+}
+.App-input {
+  font-size: calc(20px);
+  line-height: 0.5;
+  text-align: center;
+  border:  3px solid #deadca;
+  border-radius: 4px;
+  position: fixed;
+  width:30%;
+  height:5%;
+  top: 25%;
+  left: 47.5%;
+  transform: translate(-50%,-50%);
+  font-family:'Helvetica';
+  color: #313131;
+
+}
+.App-button {
+  font-size: RFValue(24);
+  position: fixed;
+  width:3%;
+  height:5%;
+  top: 25%;
+  left: 65.5%;
+  transform: translate(-50%,-50%);
+  font-family:'Helvetica';
+  font-weight: bold;
+  color: #313131;
+  border:  2px solid #a19c9c;
+  border-radius: 15px;
+  background: #F2994A;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.App-header {
+  color: #FFFFFF;
+  text-align: center;
+  height: 41vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family:'Helvetica';
+  font-size: calc(10px + 2vmin);
+  background: #aa4b6b;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
