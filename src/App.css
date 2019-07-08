@@ -46,10 +46,10 @@ padding-top: 1.4rem;
 .App-subtittle {
   position: relative;
   top: 40%; left: 50%;
-  font-size: calc(68%);
+  font-size: calc(60%);
   line-height: 1;
   text-align: center;
-  width:92%;
+  width:100%;
   height:2%;
   color: #FFFFFF;
   transform: translate(-50%,-50%);
@@ -58,7 +58,7 @@ padding-top: 1.4rem;
 .App-subsubtittle {
   font-size: calc(55%);
   text-align: center;
-  width:100%;
+  width:101%;
   height:7%;
   color: #f8f415;
   transform: translate(-50%,-50%);
@@ -74,14 +74,38 @@ padding-top: 1.4rem;
   width:50%;
   height:5%;
 }
+.App-tittleColumns{
+  /* IMPORTANTE */
+  color: #00606f;
+  font-family:'Helvetica';
+  font-size: calc(125%);
+}
+.App-pColumns{
+  /* IMPORTANTE */
+  color: #000000;
+  font-family:'Helvetica';
+  font-size: calc(105%);
+}
+.App-Columns{
+  /* IMPORTANTE */
+  text-align: justify;
+  line-height: 1.5;
+  position: relative;
+  top: -51.2%; left: 60%;
+  color: #00606f;
+  font-family:'Helvetica';
+  font-size: calc(105%);
+  width:35%;
+  height:60%;
+}
 .App-input {
   text-align: center;
   border:  3px solid #deadca;
   border-radius: 4px;
   position: relative;
-  top: 15%; left: 38%;
-  width:150%;
-  height:50%;
+  top: 15%; left: 35%;
+  width:200%;
+  height:60%;
   transform: translate(-50%,-50%);
   font-family:'Helvetica';
   color: #313131;
@@ -93,14 +117,29 @@ text-align: center;
 line-height: 1.5;
 }
 .App-justify {
+  position: relative;
+  top: 0%; left: 5%;
 text-align: justify;
+  color: #646464;
+  font-size: calc(75%);
+  width:90%;
+}
+.App-form {
+  width:20%;
+}
+.App-Go {
+  width:0.1%;
+  position: relative;
+  top: 45%; left: 20%;
+  transform: translate(-50%,-50%);
+  font-size: calc(120%);
 }
 .App-button {
   font-size: calc(75%);
   position: relative;
-  top: -35%; left: 82%;
-  width:15%;
-  height:50%;
+  top: -45%; left: 115%;
+  width:25%;
+  height:60%;
   transform: translate(-50%,-50%);
   font-family:'Helvetica';
   font-weight: bold;

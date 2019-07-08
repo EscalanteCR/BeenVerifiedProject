@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import lock from "./lock.svg";
+import num1 from "./1.png";
+import num2 from "./2.png";
+import num3 from "./3.png";
+import num4 from "./4.png";
+import num5 from "./5.png";
+import num6 from "./6.png";
 import "./App.css";
 import Datajson from "./data.json";
 import { Table } from "react-bootstrap";
@@ -37,7 +43,6 @@ class FormsEmail extends Component {
           email:
             null
         });
-        console.log(this.state.email);
       }else {
         alert("Email found.. Its your lucky day");
           console.log(this.state.email);
@@ -69,7 +74,7 @@ class FormsEmail extends Component {
           Enter any email adress. They wont be notified.
         </p>
         </div>
-        <form onSubmit={this.handleSubmit}>
+        <form className='App-form' onSubmit={this.handleSubmit}>
           <input
             type="text"
             className="App-input"
@@ -77,14 +82,35 @@ class FormsEmail extends Component {
             name="email"
             onChange={this.handleInputChange}
           />
-          <button className="App-button">GO!</button>
+          <button className="App-button"><p className='App-Go'>GO!</p></button>
         </form>
       </header>
         <div className="App-details">
+          <br />
           <h1 className="App-center">Reverse Email Lookup</h1>
           <p className="App-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <br />
+        <table width="100%"  cellpadding="10"  align="center" >
+          <tr >
+           <td><img src={num1}/><p /></td>
+           <td><font color="black" size='3'><h1 className="App-tittleColumns">Lorem Ipsum</h1><p className="App-pColumns">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></font></td>
+           <td><img src={num2} /><p /></td>
+           <td><font color="black" size='3'><h1 className="App-tittleColumns">Lorem Ipsum</h1><p className="App-pColumns">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></font></td>
+          </tr>
+          <tr>
+           <td><img src={num3}/><p /></td>
+           <td><font color="black" size='3'><h1 className="App-tittleColumns">Lorem Ipsum</h1><p className="App-pColumns">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></font></td>
+           <td><img src={num4}/><p /></td>
+           <td><font color="black" size='3'><h1 className="App-tittleColumns">Lorem Ipsum</h1><p className="App-pColumns">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></font></td>
+          </tr>
+          <tr>
+           <td><img src={num5} /><p /></td>
+           <td><font color="black" size='3'><h1 className="App-tittleColumns">Lorem Ipsum</h1><p className="App-pColumns">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></font></td>
+           <td><img src={num6}/><p /></td>
+           <td><font color="black" size='3'><h1 className="App-tittleColumns">Lorem Ipsum</h1><p className="App-pColumns">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></font></td>
+          </tr>
+        </table>
         </div>
-
       </div>
     );
   }
