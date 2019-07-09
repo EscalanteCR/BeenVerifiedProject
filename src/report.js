@@ -11,7 +11,14 @@ const elementos = Datajson;
 class Reports extends Component {
 
   state = {
-    finalData:[]
+    finalData:[],
+    nameFinal:'',
+     adressFinal:'',
+     emailFinal:'',
+     ageFinal:'',
+     notesFinal:'',
+     phoneNumbersFinal:[],
+     relativesFinal:[]
   };
 
   handleSubmit = event => {
@@ -27,7 +34,7 @@ class Reports extends Component {
         finalData:
           !!this.state.email && resultArray ? resultArray : elementos.data
       });
-      if (resultArray=== ''){
+      if (resultArray== ''){
         alert("Email not found.. Try again");
         this.setState({
           email:
@@ -35,19 +42,34 @@ class Reports extends Component {
         });
       }else {
         alert("Email found.. Its your lucky day");
-        this.props.history.push('/reports')
+        this.state.finalData=resultArray[0];
+        this.state.nameFinal=this.state.finalData.name;
+        this.state.addressFinal=this.state.finalData.address;
+        this.state.emailFinal=this.state.finalData.email;
+        this.state.ageFinal=this.state.finalData.age;
+        this.state.notesFinal=this.state.finalData.notes;
+        if(this.state.finalData.relatives == ''){
+        }else {
+          this.state.relativesFinal=this.state.finalData.relatives[0].name;
+        }
+        if(this.state.finalData.phoneNumbers == ''){
+        }else {
+          this.state.phoneNumbersFinal=this.state.finalData.phoneNumbers[0].phone;
+        }
+
       }
     }
   };
   handleInputChange = event => {
     event.preventDefault();
-    this.setState({
+    this.setState({  
       [event.target.name]: event.target.value
+
+
     });
   };
-
-
   render() {
+    console.log();
     return (
       <div>
       <header className="App-headerReport">
@@ -61,19 +83,19 @@ class Reports extends Component {
         <tbody align="center">
           <tr>
           <td><img src={person}/><p /></td>
-          <td colSpan="4"><h1 className="App-centerTittleReportName">Name</h1><p className="App-pColumnsSubtittle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></td>
+          <td colSpan="4"><h1 className="App-centerTittleReportName">{this.state.nameFinal}</h1><p className="App-pColumnsSubtittle">{this.state.notesFinal}</p></td>
           </tr>
           <tr>
            <td><p /></td>
-           <td width="50%"><font color="black" size='3'><h1 className="App-tittleColumnsReport">Adress</h1><p className="App-pColumns">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></font></td>
+           <td width="50%"><font color="black" size='3'><h1 className="App-tittleColumnsReport">Adress</h1><p className="App-pColumns">{this.state.addressFinal}</p></font></td>
            <td><p /></td>
-           <td width="50%"><font color="black" size='3'><h1 className="App-tittleColumnsReport">Phone Numbers</h1><p className="App-pColumns">(555) 555-5555</p></font></td>
+           <td width="50%"><font color="black" size='3'><h1 className="App-tittleColumnsReport">Phone Numbers</h1><p className="App-pColumns">{this.state.phoneNumbersFinal}</p></font></td>
           </tr>
           <tr>
            <td><p /></td>
-           <td width="50%"><font color="black" size='3'><h1 className="App-tittleColumnsReport">Email</h1><p className="App-pColumns">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></font></td>
+           <td width="50%"><font color="black" size='3'><h1 className="App-tittleColumnsReport">Email</h1><p className="App-pColumns">{this.state.emailFinal}</p></font></td>
            <td><p /></td>
-           <td width="30%"><font color="black" size='3'><h1 className="App-tittleColumnsReport">Relatives</h1><p className="App-pColumns">Lorena aliqua.</p></font></td>
+           <td width="30%"><font color="black" size='3'><h1 className="App-tittleColumnsReport">Relatives</h1><p className="App-pColumns">{this.state.relativesFinal}</p></font></td>
           </tr>
           </tbody>
         </table>

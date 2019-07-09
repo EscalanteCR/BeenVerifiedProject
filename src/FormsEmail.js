@@ -9,21 +9,25 @@ import num5 from "./5.png";
 import num6 from "./6.png";
 import "./App.css";
 import Datajson from "./data.json";
-
+import report from "./report";
 const elementos = Datajson;
 class FormsEmail extends Component {
-
   state = {
-    finalData:[]
+      finalData:[],
+      nameFinal:'',
+     adressFinal:'',
+     emailFinal:'',
+     ageFinal:'',
+     notesFinal:'',
+     phoneNumbersFinal:'',
+     relativesFinal:''
   };
-
   handleSubmit = event => {
     event.preventDefault();
     this.state.finalData=elementos.data;
     if(this.state.email===null || this.state.email===''){
        alert("Email can not be null");
     }else{
-
       const resultArray = this.state.finalData.filter(item =>
         item.email.toLowerCase().includes(this.state.email.toLowerCase())
       );
@@ -31,7 +35,7 @@ class FormsEmail extends Component {
         finalData:
           !!this.state.email && resultArray ? resultArray : elementos.data
       });
-      if (resultArray=== ''){
+      if (resultArray== ''){
         alert("Email not found.. Try again");
         this.setState({
           email:
@@ -39,9 +43,14 @@ class FormsEmail extends Component {
         });
       }else {
         alert("Email found.. Its your lucky day");
+
+        this.state.finalData=resultArray[0];
+        this.state.nameFinal=this.state.finalData.name;
+        this.state.addressFinal=this.state.finalData.address;
+        this.state.emailFinal=this.state.finalData.email;
+        this.state.ageFinal=this.state.finalData.age;
+        this.state.notesFinal=this.state.finalData.notes;
         this.props.history.push('/reports')
-        this.state.finalData=resultArray;
-        console.log(this.state.finalData);
 
       }
     }
